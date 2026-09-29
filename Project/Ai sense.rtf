@@ -1,0 +1,61 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww14460\viewh18920\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+AI Sense\
+\
+action = sense + preconceived concept \
+or rather updated: action = sense + knowledge + context\
+or maybe even: 
+\f1\b action = reason(sense, knowledge, context)
+\f0\b0 \
+\
+example: (see cup of water on desk) + (knowing i can drink from this cup) = I drink\
+\
+Preconceived concept = long term concept + short term concept\
+example: (cups are for drinking) + (i filled this up recently) = i can drink from this cup\
+\
+for an AI:\
+\
+\
+action = sense + knowledge\
+\
+soldering iron scenario:\
+\
+I leave a soldering iron on by accident and walk away from the workbench.\
+\
+sense:\
+-soldering_iron.state = on\
+-user_presense         = kitchen (not at soldering bench)\
+\
+\
+knowledge(long):\
+-unwatched soldering iron is dangerous\
+\
+knowledge(short):\
+-user absence >= 15 min\
+\
+Agent: \'93I see the soldering iron is on, and i see the user is in the kitchen. I know unmanned soldering irons are dangerous, and I know the user has been away from the bench for 15 minutes. Perhaps they forgot to turn it off. I should turn it off [ACTION]\'94\
+\
+\'93I see the soldering iron is on\'94 source: traditional software, mqtt, or potentially CV (thermal) which is harder\
+\'93I see the user is in the kitchen\'94 source: multimodal (CV/video) input\
+\'93I know unmanned soldering irons are dangerous\'94 source: intrinsic LLM knowledge\
+\'93I know the user has been away for 15 minutes\'94 source: world awareness/persistent physical memory\
+\'93Perhaps they forgot to turn it off\'94 reasoning (background? beyond scope of this?)\
+\'93I should turn it off\'94 reasoning, with action/tool call\
+\
+Professor,\
+I am beginning to think about research topics for the AI for robotics course. My foremost interest in Ai for robotics lies in embodied AI assistants, especially for home automation, day-to-day tasks, and engineering projects. I would like to pick a research topic related to this but I want to make sure my pick is academically robust enough to satisfy the requirements for the research paper. Ideally, I would like this to be a paper I can publish. I have narrowed down some topics that I could use some feedback on:\
+\
+1) Artificial senses for proactive assistance \
+	Current systems like google home or chatgpt require user input to perform any action. For example, I must tell Google Home to turn off the lights when I am watching a movie. It cannot proactively turn off the lights by sensing the situation, reasoning, and then acting. The solution to this could be as simple as action = reason(sense, knowledge, context), but fusing sense, knowledge, and context and then reasoning on them to perform an action would be an interesting area of research. \
+\
+2) multi-modal reference for reasoning\
+	If a user says to the system \'93Turn that off\'94, purely text-based systems likely wont know what \'93that\'94 is. However, if this agent has access to video, sound, state, etc, it would be able to infer what \'93that\'94 is an act accordingly. The research question would then become how can we obtain and combine multiple different modes of contextual information into something an embodied assistant could use\
+\
+3) world awareness models/persistent physical memory\
+	Instead of text-based episodic memory like \'93The user put the multimeter on the bench yesterday\'94, we could store real world data as something like \'93multimeter.location = electronics_bench\'94. The research question would then become how do we store and retrieve this data effectively?}
